@@ -39,6 +39,6 @@ public class CompanyDAOImpl implements CompanyDAO {
     @Override
     public List<Company> list() {
         EntityManager em = emf.createEntityManager();
-        return em.createQuery("FROM User", Company.class).getResultList();
+        return em.createQuery("FROM Company", Company.class).getResultList();
     }
 }

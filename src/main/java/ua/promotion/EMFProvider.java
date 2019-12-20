@@ -1,4 +1,4 @@
-package ua.kiev.prog.prohw4.bank;
+package ua.promotion;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
