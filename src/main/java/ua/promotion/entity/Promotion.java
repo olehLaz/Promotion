@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.xml.crypto.Data;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -38,7 +39,7 @@ public class Promotion implements Serializable {
     private double totalNominalValue;
 
     @Column(nullable = false)
-    private Data releaseDate;
+    private Date releaseDate;
 
 
     @ManyToOne
@@ -51,14 +52,14 @@ public class Promotion implements Serializable {
     public Promotion() {
     }
 
-    public Promotion(String comment, Integer authorizedCapital, Integer number, double nominalValue, double stateDutyPaid, double totalNominalValue, Data releaseDate, Company company, List<Transaction> transactions) {
+    public Promotion(String comment, Integer authorizedCapital, Integer number, double nominalValue, double stateDutyPaid, double totalNominalValue, Company company, List<Transaction> transactions) {
         this.comment = comment;
         this.authorizedCapital = authorizedCapital;
         this.number = number;
         this.nominalValue = nominalValue;
         this.stateDutyPaid = stateDutyPaid;
         this.totalNominalValue = totalNominalValue;
-        this.releaseDate = releaseDate;
+        this.releaseDate = new Date();
         this.company = company;
         this.transactions = transactions;
     }
@@ -111,13 +112,10 @@ public class Promotion implements Serializable {
         this.totalNominalValue = totalNominalValue;
     }
 
-    public Data getReleaseDate() {
+    public Date getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Data releaseDate) {
-        this.releaseDate = releaseDate;
-    }
 
     public Company getCompany() {
         return company;
